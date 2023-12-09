@@ -25,7 +25,7 @@ It uses the lowest order Virtual Element Method to solve a toy problem, a 2-D po
     --save_plot    Flag for saving the plot
     --title TITLE  Title of plot
 
-The meshes are available for download [here](http://www.netlib.org/numeralgo/).
+The meshes are available for download [here](http://www.netlib.org/numeralgo/)(included with the na45 package).
 
 ## Example Usage
     $ # Computing the solution of a 2-D poisson equation on a square mesh and square domain
