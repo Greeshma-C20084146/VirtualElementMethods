@@ -1,9 +1,9 @@
 # VirtualElementMethods
-This repository contains a Python translation of the code provided in:
+A translation of the code given in Python can be found in this repository:
 
-The virtual element method in 50 lines of MATLAB. Oliver J. Sutton. Numerical Algorithm [https://dl.acm.org/doi/10.1007/s11075-016-0235-3]
+[The virtual element method in 50 lines of MATLAB. Oliver J. Sutton. Numerical Algorithm](https://dl.acm.org/doi/10.1007/s11075-016-0235-3)
 
-It solves a toy problem, a 2-D poisson equation on generalized polygonal meshes, using the lowest order Virtual Element Method.
+It uses the lowest order Virtual Element Method to solve a toy problem, a 2-D poisson equation on generalised polygonal meshes.
 
 ## Usage
     $ python3 vem.py --help
@@ -25,30 +25,30 @@ It solves a toy problem, a 2-D poisson equation on generalized polygonal meshes,
     --save_plot    Flag for saving the plot
     --title TITLE  Title of plot
 
-The meshes can be downloaded from here (http://www.netlib.org/numeralgo/). A copy of the meshes is also provided in this repository in the meshes directory.
+The meshes are available for download [here](http://www.netlib.org/numeralgo/).
 
 ## Example Usage
     $ # Computing the solution of a 2-D poisson equation on a square mesh and square domain
     $ python3 vem.py -d s meshes/square -o solution.npy --save_plot --title plot.png
 
 ## Some Results
-Since this is a translation of the paper, this repository solved the exact toy problem that the paper has taken up, that is,
+Given that this is a translation of the research, the same toy issue that the paper addressed was resolved by this repository:
 
 ![image](https://github.com/Greeshma-C20084146/VirtualElementMethods/assets/125087684/bd8629fd-64cf-40be-b669-de02d2ba8aeb)
 
 ![image](https://github.com/Greeshma-C20084146/VirtualElementMethods/assets/125087684/5c179338-cbe1-4a73-9d2a-f57405bc930e)
 
 
-The solutions to this problem on different meshes in the square domain are shown below.
+Below are the answers to this issue on various square domain meshes.
 
 ![image](https://github.com/Greeshma-C20084146/VirtualElementMethods/assets/125087684/96913639-0c55-42a6-bf79-8c45d7a3c272)
 				
 ## Custom boundary conditions and RHS
-You can customise the code to run it with your own boundary condition and RHS too!
+The code can be modified so that it runs with your own boundary condition and RHS as well!
 
-Just take a look at square_domain_boundary_condition and square_domain_rhs, you can write similar boundary condition functions and RHS function definitions.
+You can write RHS function definitions and boundary condition functions that are analogous to square_domain_rhs and square_domain_boundary_condition.
 
-Basically, the template is as follows:
+In essence, the template looks like this:
 
     # for boundary condition
     def my_boundary_condition(points):
@@ -64,6 +64,6 @@ Basically, the template is as follows:
       result_rhs = do_something_else(point)
       return result_rhs
 
-Now, in vem.py, go to the main function where the vem function is called and change it to:
+Now, in vem.py, locate the main function that calls the vem function and modify it to:
 
     u = vem(mesh_file, my_rhs, my_boundary_condition)
